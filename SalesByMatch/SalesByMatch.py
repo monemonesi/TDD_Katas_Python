@@ -7,4 +7,4 @@ def sock_merchant(n: int, ar: []) -> int:
             colours.remove(sock)
         else:
             colours.add(sock)
-    return pairsS
+    return pairs
