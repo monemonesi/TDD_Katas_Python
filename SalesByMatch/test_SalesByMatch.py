@@ -14,6 +14,24 @@ def test_sock_merchant_should_return_zero_with_only_one_sock() -> None:
 
 
 @pytest.mark.parametrize("sock", [random.randrange(0, 100)])
+def test_sock_merchant_should_return_zero_with_only_different_socks(sock: int) -> None:
+    """The number of pairs should be one when two socks of the same colour are given"""
+    assert Seller.sock_merchant(2, [sock, sock+1, sock-1, sock+10]) == 0
+
+
+@pytest.mark.parametrize("sock", [random.randrange(0, 100)])
 def test_sock_merchant_should_return_one_with_a_pair_of_socks(sock: int) -> None:
     """The number of pairs should be one when two socks of the same colour are given"""
     assert Seller.sock_merchant(2, [sock, sock]) == 1
+
+
+@pytest.mark.parametrize("sock", [random.randrange(0, 100)])
+def test_sock_merchant_should_return_one_with_a_pair_of_socks_and_one_odd(sock: int) -> None:
+    """The number of pairs should be one when two socks of the same colour are given"""
+    assert Seller.sock_merchant(3, [sock, sock, sock+1]) == 1
+
+
+@pytest.mark.parametrize("sock", [random.randrange(0, 100)])
+def test_sock_merchant_should_return_two_with_two_pair_of_socks(sock: int) -> None:
+    """The number of pairs should be one when two socks of the same colour are given"""
+    assert Seller.sock_merchant(3, [sock, sock, sock+1, sock+1, sock+2]) == 2
