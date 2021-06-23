@@ -1,14 +1,11 @@
-import numpy as np
-
-
-def make_jump(c: [], i: int, jumps: int) -> int:
+def make_jump(c: [], i: int, jumps: int) -> ():
     if c[i+2] == 0:
         return jumps+1, i+2
     else:
         return jumps+1, i+1
 
 
-def jumpingOnClouds(c: []) -> int:
+def jumping_on_clouds(c: []) -> int:
     """Function to calculate the minimum number of jump necessary to go from c0 to cn-1"""
     jumps = 0
     i = 0
