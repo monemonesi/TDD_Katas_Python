@@ -1,0 +1,4 @@
+Simply identify if 2 strings are anagram, ignoring white spaces and capital letters. For example:
+'dog', 'goD' -> True
+'clint Eastwood', 'old west action' -> True
+'aa', 'ab' -> False
